@@ -46,15 +46,17 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'BGGDataScraping.middlewares.BggdatascrapingSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+    'BGGDataScraping.middlewares.BggdatascrapingSpiderMiddleware': 543,
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None
+}
+
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'BGGDataScraping.middlewares.BggdatascrapingDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+    'BGGDataScraping.middlewares.BggdatascrapingDownloaderMiddleware': 543,
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
