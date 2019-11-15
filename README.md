@@ -20,7 +20,7 @@ class BggdatascrapingItem(Item):
 
 ### bgg_spider.py
 
-This is a file that is under BGGDataScraping/spiders. It contains the class that will describe the actual parser. Here are a few points to consider. The function is iterating through the first 50 pages and pasing each game into an item, which includes the fields we are interested in, like rank, average rating and title.
+This is a file that is under BGGDataScraping/spiders. It contains the class that will describe the actual parser, and the function is iterating through the first 50 pages and parsing each game into an item, which includes the fields we are interested in like rank, average rating and title.
 
 ## Scheduling the web crawling using Apache Airflow
 
