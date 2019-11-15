@@ -22,5 +22,23 @@ class BggdatascrapingItem(Item):
 
 This is a file that is under BGGDataScraping/spiders. It contains the class that will describe the actual parser. Here are a few points to consider. The function is iterating through the first 50 pages and pasing each game into an item, which includes the fields we are interested in, like rank, average rating and title.
 
-## Scheduling the web crawling using Apache
+## Scheduling the web crawling using Apache Airflow
 
+The next step is to use Apache Airflow to schedule a webcrawl every hour. The following code is included in the Airflow DAG.
+
+```python
+from airflow import DAG
+from airflow.operators.bash_operator import BashOperator
+from datetime import datetime, timedelta
+default_args = {
+        'owner': 'airflow',
+        'start_date': datetime(2019, 6, 15)
+        }
+dag = DAG('bgg_crawler', default_args=default_args, schedule_interval='0 * * * *', catchup=False)
+t1 = BashOperator(
+    task_id='schedule_bgg_crawler',
+    bash_command="cd ~/BGGDataScraping && scrapy crawl bgg -o file_'{{ execution_date }}'.csv -t csv",
+    dag=dag)
+```
+
+Once the process is complete, the output is written to a series of CSVs.
