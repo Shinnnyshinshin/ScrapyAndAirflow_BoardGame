@@ -1,0 +1,6 @@
+[2019-09-25 21:46:56,242] {scheduler_job.py:146} INFO - Started process (PID=6460) to work on /Users/willshin/airflow/dags/boardgame_dag.py
+[2019-09-25 21:46:56,248] {scheduler_job.py:1520} INFO - Processing file /Users/willshin/airflow/dags/boardgame_dag.py for tasks to queue
+[2019-09-25 21:46:56,249] {logging_mixin.py:95} INFO - [2019-09-25 21:46:56,249] {dagbag.py:90} INFO - Filling up the DagBag from /Users/willshin/airflow/dags/boardgame_dag.py
+[2019-09-25 21:46:56,256] {scheduler_job.py:1532} INFO - DAG(s) dict_keys(['bgg_crawler']) retrieved from /Users/willshin/airflow/dags/boardgame_dag.py
+[2019-09-25 21:46:56,265] {logging_mixin.py:95} INFO - [2019-09-25 21:46:56,265] {dag.py:1323} INFO - Creating ORM DAG for bgg_crawler
+[2019-09-25 21:46:56,279] {scheduler_job.py:152} INFO - Processing /Users/willshin/airflow/dags/boardgame_dag.py took 0.037 seconds
